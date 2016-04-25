@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: bu5.aux
+The style file: bibliostyleINRS.bst
+Database file #1: biblio/biblio.bib
+Warning--empty journal in Brie1995
+You've used 44 entries,
+            2060 wiz_defined-function locations,
+            835 strings with 13099 characters,
+and the built_in function-call counts, 20693 in all, are:
+= -- 2333
+> -- 673
+< -- 26
++ -- 240
+- -- 234
+* -- 1521
+:= -- 4197
+add.period$ -- 156
+call.type$ -- 44
+change.case$ -- 331
+chr.to.int$ -- 44
+cite$ -- 45
+duplicate$ -- 671
+empty$ -- 1309
+format.name$ -- 304
+if$ -- 4142
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 48
+newline$ -- 252
+num.names$ -- 132
+pop$ -- 297
+preamble$ -- 1
+purify$ -- 337
+quote$ -- 0
+skip$ -- 455
+stack$ -- 0
+substring$ -- 1831
+swap$ -- 52
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 252
+warning$ -- 1
+while$ -- 147
+width$ -- 0
+write$ -- 616
+(There was 1 warning)

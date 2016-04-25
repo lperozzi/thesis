@@ -1,0 +1,293 @@
+%% Source : gabarit de thèse de l'Université Laval (memoire.tex)
+%%
+%% Modifié par :
+%% Karine Guinard (INRS-ETE, 2014)
+%% karine.guinard@ete.inrs.ca
+% \PassOptionsToPackage{french,english}{babel}
+\documentclass[phd, noindex, hyperref, entetes, prelimtmm, francais, english]{theseINRS} % Pour une
+% thèse de doctorat, remplacer "msc" par "phd"
+\usepackage[utf8]{inputenc} % Pour pouvoir taper les accent directement et sans
+% passer par \'
+% \usepackage[bitstream-charter]{mathdesign}
+\usepackage{libertine}
+\usepackage[libertine,cmintegrals,cmbraces,vvarbb]{newtxmath}
+\usepackage[T1]{fontenc} % Pour que les accents soient correctement traités dans
+% le PDF
+
+% \usepackage{lmodern} % Pour que les accents soient correctement traités dans
+% le PDF
+% \usepackage{amsmath,amssymb,bm} % Pour offrir plus de symboles mathématiques
+\usepackage{natbib}
+% \usepackage[francais,english]{babel}
+\bibliographystyle{bibliostyleINRS} % Pour citer des références avec \cite et
+% \citep
+\usepackage[letterpaper, margin=25mm]{geometry} % Pour la définition de la mise
+% en forme du document
+\usepackage{graphicx} % Pour insérer des images avec la commande
+% \includegraphics
+\usepackage{rotating}
+\usepackage{pdflscape} % Pour inclure des éléments en mode paysage en conservant
+% les entêtes en mode portrait (environnement sideways)
+\usepackage{afterpage}
+
+\usepackage{tabularx} % Pour rendre plus flexible la création de tableaux
+\usepackage{nomencl} % Pour générer une liste d'abréviations
+\usepackage[font={singlespacing,footnotesize,bf}]{caption} % Pour définir le
+% style des légendes de figures
+\usepackage[font={singlespacing,footnotesize}]{subcaption} % Pour générer des
+% sous-figures (subfig is deprecated)
+\usepackage{textcomp} % Pour que les symboles de degrés apparaissent plus beaux
+\usepackage{emptypage} % Pour enlever les numéros de page sur les pages blanches
+\usepackage{calc}
+\usepackage[shortlabels]{enumitem}
+% \usepackage{enumitem}
+
+\usepackage{epstopdf}
+\usepackage{booktabs,dcolumn,caption}
+\usepackage{threeparttable}
+\usepackage{lineno}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{lineno,hyperref}
+\usepackage{microtype}
+\usepackage{afterpage}
+\usepackage[separate-uncertainty]{siunitx}
+\usepackage[version=3]{mhchem}
+\usepackage{etoolbox}
+% \usepackage[]{chapterbib}
+\usepackage[globalcitecopy]{bibunits}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{blindtext}
+\usepackage[noabbrev,french]{cleveref}
+\usepackage{bibentry}
+\usepackage[]{caption}
+\usepackage{subcaption}
+\usepackage{textcomp}
+\usepackage{tocloft}
+\usepackage{translations}
+\usepackage{afterpage}
+\usepackage{fancyhdr}
+
+\robustify\tnote
+
+\crefname{chapter}{article}{articles}
+
+\global\def\fonteauteurs{}
+
+
+\captionsetup[subfigure]{labelfont=bf,textfont=bf,singlelinecheck=off,justification=centering}
+
+
+
+
+\sisetup{
+list-final-separator = { \translate{and} },
+range-phrase = { \translate{to (numerical range)} },
+}
+\makeatletter
+\newcommand\mynobreakpar{\par\nobreak\@afterheading}
+\makeatother
+
+\makeatletter
+\newcommand{\nolisttopbreak}{\vspace{\topsep}\nobreak\@afterheading}
+\makeatother
+
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\definecolor{Gray}{gray}{0.9}
+\urlstyle{same}
+
+\DisableLigatures{encoding = *, family = * }
+\modulolinenumbers[5]
+
+\sisetup{separate-uncertainty,per-mode = symbol,detect-weight=true,
+detect-family=true}
+
+\raggedbottom % Pour uniformiser l'espacement vertical entre les éléments dans
+% les pages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % \includeonly{introduction/intro}
+ % \includeonly{article1/article1}
+ % \includeonly{avPropos/avPropos}
+ % \includeonly{methodologie/methodologie}
+ % \includeonly{methodologie/sismique_diff}
+
+\begin{document}
+    \nobibliography{biblio/biblio}
+    \nocite{Perozzi1,Perozzi2}
+% \defaultbibliography{biblio/biblio}
+% \defaultbibliographystyle{plainnat}
+\shorthandoff{:} % Ne pas ajouter automatiquement un espace avant un ":"
+\shorthandoff{;} % Ne pas ajouter automatiquement un espace avant un ";"
+\shorthandoff{?} % Ne pas ajouter automatiquement un espace avant un "?"
+\shorthandoff{!} % Ne pas ajouter automatiquement un espace avant un "!"
+
+\pagesprelim
+\PrenomNom{Lorenzo Perozzi}
+\titre{ÉLABORATION D'UN FLUX DE TRAVAIL POUR LA SURVEILLANCE SISMIQUE DE
+L'INJECTION DU \texorpdfstring{\ce{CO2}}{CO2} DANS DES GRÈS PEU POREUX: DE LA
+MODÉLISATION SISMIQUE À L'INVERSION STOCHASTIQUE.} % en lettres majuscules
+%\soustitre{Sous-titre} % Si désiré, ajouter un sous-titre
+\programme{sciences de la terre}
+\grade{\textit{Philosophiae doctor}, Ph.D.}
+\jury{Examinateur externe &  Hubert Fabriol Ph.D.\\
+	& Bureau de Recherches Géologiques et Minières (BRGM) \\[0.5cm]
+	Examinateur externe &  Martin Bèche Ph.D.\\
+	& Petrolia \\[0.5cm]
+	Examinateur interne & Mathieu Duchesne Ph.D.\\
+	& Commission Géologique du Canada (CGC) \\[0.5cm]
+	Directeur de recherche & Bernard Giroux Ph.D.\\
+	& INRS - Centre Eau Terre Environnement \\[0.5cm]
+	Codirecteur de recherche & Erwan Gloaguen Ph.D\\
+	& INRS - Centre Eau Terre Environnement \\[0.5cm]
+	Codirecteur de recherche & Klaus Holliger Ph.D.\\
+	& Université de Lausanne \\[0.5cm]}
+\annee{2015}
+
+\maketitle
+\afterpage{\blankpage}
+\include{dedicace/dedicace} % Section facultative
+\afterpage{\blankpage}
+\include{remerciements/remerciements} % Section facultative (Remerciements ou
+% Avant propos, pas les deux)
+
+\begin{bibunit}[bibliostyleINRS]
+\include{avPropos/avPropos} % Section facultative (Remerciements ou Avant
+% propos, pas les deux)
+% \bibentry{Perozzi1}
+% \putbib[biblio/biblio]
+\end{bibunit}
+\include{resume/resume}
+\include{abstract/abstract}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\contentsname} % Ajouter une ligne pour la table
+% des matières dans la table des matières.
+\begin{bibunit}[bibliostyleINRS]
+
+\tableofcontents
+
+\cleardoublepage
+\phantomsection
+\renewcommand*\listfigurename{Liste des figures} % Afficher "Liste des figures"
+% plutôt que "Table des figures".
+\addcontentsline{toc}{chapter}{\listfigurename} % Ajouter une ligne pour la
+% table des figures dans la table des matières.
+\listoffigures % Omettre s'il n'y a pas de figure.
+\cftaddtitleline{lof}{chapter}{Première partie - Synthèse}{}
+\cftaddtitleline{lot}{chapter}{Première partie - Synthèse}{}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename} % Ajouter une ligne pour la liste
+% des tableaux dans la table des matières.
+\listoftables % Omettre s'il n'y a pas de tableau.
+
+\cleardoublepage
+\phantomsection
+% \renewcommand{\nomname}{Liste des abréviations}
+% \addcontentsline{toc}{chapter}{\nomname} % Ajouter une ligne pour la liste des
+% abréviations dans la table des matières.
+% \makenomenclature
+% \setlength\nomlabelwidth{2cm} % Aligner les descriptions d'abréviations à 2
+% cm.
+% \printnomenclature
+% \cleardoublepage
+% \putbib[biblio/biblio]
+\end{bibunit}
+\corps
+\renewcommand{\tablename}{\textsc{Tableau}} % Afficher "Tableau" plutôt que
+% "Table" dans le document.
+
+\part{Synthèse} % Omettre si thèse/mémoire traditionnel, conserver uniquement
+% les chapitres
+
+\begin{bibunit}[bibliostyleINRS]
+
+\include{introduction/intro}
+\include{methodologie/sismique}
+\include{methodologie/geostat}
+% \include{resultats:discussions/resultats:discussion}
+\include{conclusion/conclusion}
+\renewcommand{\bibname}{Références}
+\addcontentsline{toc}{chapter}{\bibname}
+% \bibliographystyle{bibliostyleINRS}
+% \bibliography{biblio/synthese.bib}
+\begin{singlespacing}
+\putbib[biblio/biblio]
+\end{singlespacing}
+\end{bibunit}
+\cftaddtitleline{lof}{chapter}{Deuxième partie - Articles}{}
+\cftaddtitleline{lot}{chapter}{Deuxième partie - Articles}{}
+\cftaddtitleline{lof}{chapter}{Article I}{}
+\cftaddtitleline{lot}{chapter}{Article I}{}
+% Omettre si thèse/mémoire traditionnel
+\part{Articles}
+
+
+\renewcommand{\chaptername}{Article} % Afficher "Article" plutôt que "Chapitre".
+\setcounter{chapter}{0} % Recommencer la numérotation des chapitres.
+\cftaddtitleline{lof}{chapter}{Article II}{}
+\cftaddtitleline{lot}{chapter}{Article II}{}
+
+\begin{bibunit}[bibliostyleINRS]
+% \begin{spacing}{1.5}
+\include{article1/article1}
+% \end{spacing}
+\renewcommand{\bibname}{Références}
+\addcontentsline{toc}{chapter}{\bibname}
+\begin{singlespacing}
+\putbib[biblio/biblio]
+\end{singlespacing}
+\end{bibunit}
+
+\renewcommand{\chaptername}{Article}
+\begin{bibunit}[bibliostyleINRS]
+% \begin{spacing}{1.5}
+\include{article2/article2}
+% \end{spacing}
+\renewcommand{\bibname}{Références}
+\addcontentsline{toc}{chapter}{\bibname}
+\begin{singlespacing}
+\putbib[biblio/biblio]
+\end{singlespacing}
+\end{bibunit}
+
+
+% % \begin{bibunit}
+% % \addcontentsline{toc}{chapter}{\bibname}
+% \begin{spacing}{1.5}
+% \include{article2/article2}
+% \end{spacing}
+% % \putbib
+% % \end{bibunit}
+
+
+\singlespacing
+\cleardoublepage
+\phantomsection
+% \renewcommand{\bibname}{Références} % Afficher "Références" plutôt que "Bibliographie".
+% \addcontentsline{toc}{chapter}{\bibname} % Ajouter une ligne pour la
+% bibliographie dans la table des matières.
+% \bibliographystyle{bibliostyleINRS} % Utiliser le style bibliographique de
+% l'INRS.
+% \bibliography*{biblio/biblio} % Générer la bibliographie avec Bibtex (fichier
+% biblio.bib).
+% \include{biblio/biblio} % Inclure une bibliographie écrite manuellement.
+    % \bibliography{biblio/biblio}
+
+% Si désiré, ajouter des annexes.
+\appendix
+%\include{annexeA/annexeA}
+
+\end{document}

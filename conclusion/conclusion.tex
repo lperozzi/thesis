@@ -1,0 +1,85 @@
+%!TeX root = Thesis_LP.tex
+\chapter{Conclusion}
+Cette thèse propose une approche exhaustive pour la caractérisation sismique de
+l'injection du \ce{CO2}, de la modélisation sismique par profilage sismique
+vertical (PSV) à l'optimisation stochastique des propriétés élastiques du
+réservoir basée sur les simulations d'écoulement. Les principaux développements
+méthodologiques ciblant ces différents aspects ont été présentés au sein de
+cette partie synthèse. L'approche présentée favorise l'assimilation des données
+statiques (mesures de laboratoire, données de forage) avec les données dynamiques
+(écoulement du \ce{CO2}).\\
+
+Au niveau de la modélisation sismique de l'injection due \ce{CO2}, des mesures de
+laboratoires ont été effectuées afin d'évaluer la réponse sismique ultrasonique du
+à l'injection due \ce{CO2} dans deux échantillons du réservoir ciblé pour le
+stockage du dioxyde de carbone. \\
+Un modèle stochastique calibré sur les résultats obtenus en laboratoire ainsi
+que sur les données de forage disponibles dans la zone d'étude a été construit
+afin d'effectuer une modélisation (PSV) poroviscoélastique avant et après
+injections du \ce{CO2}. Cette approche comporte les étapes suivantes:
+\begin{enumerate}[-]
+\item  mesurer en laboratoire la valeur du module d'incompressibilité de la roche sèche qui est un
+paramètre important dans les équations poroviscoélastiques pour la modélisation
+sismique.
+\item utiliser un modèle stochastique pour la modélisation sismique, permettant de
+reproduire la variation naturelles de la distribution des paramètres à
+l’intérieur des différentes formations géologiques et donc d'obtenir une réponse
+sismique plus réaliste comparée à la réponse obtenue avec un modèle homogène par
+couche;
+\item utiliser l'hypothèse d'équilibre vertical, permettant la simulation rapide et
+précise de l'injection et de la migration du \ce{CO2}, comparé aux méthodes
+numériques classiques qui ne sont pas toujours abordables ou même possibles à
+mettre en œuvre car ces dernières requièrent des efforts de calculs élevés;
+\item utiliser le profilage vertical pour augmenter la résolution sismique
+verticale. Ceci est particulièrement utile quand les différences de signature sismique entre les
+acquisitions temporelles sont très faibles;
+\item utiliser une formulation poroviscoélastique est probablement l'outil le plus
+efficace pour étudier l'effet de la saturation des fluides sur la réponse
+sismique car avec cette formulation, les propriétés des fluides sont directement
+intégrées dans les équations et les intéractions fluides/matrices qui sont prises en compte par le module de couplage.
+\end{enumerate}
+
+Les résultats obtenus ont montré que pour un contexte tel que celui qui a été étudié,
+c'est-à-dire avec des porosités et des perméabilités très faibles, les différences
+dans la réponse sismique dues à l'injections du \ce{CO2} sont relativement faibles
+et se résument en un délai dans le temps d'arrivée de l'onde, de l'ordre de
+\SI{30}{\milli\second}. La comparaison avec un scénario optimal (avec des plus grandes porosités et des pérmeabilites) montre que malgré que le panache du \ce{CO2} reste confiné autour du puits d'injection, la réponse sismique est comparable.\\
+L'analyse de la variation des amplitudes avec le déport
+des tirs a été faite uniquement avec des déports courts car l'apparition d'une onde
+réfractée pour les déport supérieurs à \SI{700}{\metre} a empêché la séparation de
+ondes ascendantes des ondes descendantes. Il va sans dire qu'il reste des idées
+de recherche à poursuivre:
+\begin{enumerate}[-]
+\item mesurer les effets de la pression dû à l'injection du \ce{CO2} en
+laboratoire et les transposer à l'échelle du réservoir afin de pouvoir les séparer
+des effet dus à la substitution de fluide;
+\item appliquer la méthodologie à des données réelles;
+\item adapter cette méthodologie pour des scénarios 3D.
+\end{enumerate}
+\vspace{10 mm}
+Concernant la modélisation stochastique d'un réservoir potentiel pour la
+séquestration géologique du \ce{CO2}, une approche en trois étapes à été proposée
+pour l'optimisation des modèles de réservoir, basées sur les données statiques
+(c'est-à-dire les données de forages) et les données dynamiques (c'est-à-dire la simulation
+d'écoulement du \ce{CO2}). Quelques constats peuvent être fait à cet égard:
+\begin{enumerate}[-]
+\item l'utilisation des données dynamiques pour la caractérisation de réservoir
+pour la séquestration du \ce{CO2} apporte un bénéfice majeur pour l'obtention
+d'un modèle final optimal;
+\item la modélisation de l'onde complète pour plusieurs déports à court, moyen
+et longue distances permet de tenir compte de toutes les variations dues à l'injection
+du \ce{CO2};
+\item l'utilisation d'un processeur graphique (GPU) pour la modélisation sismique à
+chaque itération permet de réduire considérablement (\num{2} ordres de
+grandeurs) les temps de calculs.
+\end{enumerate}
+
+Les résultats obtenus ont montré que l'utilisation des données dynamiques
+dans la boucle d'optimisation permet d'améliorer la correspondance sismique du
+modèle de réservoir simulé avec le modèle de référence. Cependant des
+développements futurs qui permettront d'accroître sa portée sont envisageables:
+\begin{enumerate}[-]
+\item cette approche a été uniquement testée avec un modèle synthétique réaliste.
+Son application à des données réelles permettrait de valider l'approche;
+\item adapter cette méthodologie pour des scénario 3D.
+\end{enumerate}
